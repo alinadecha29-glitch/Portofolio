@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Alina Decha Nabila Putri</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- CSS RESET & PINK-BLACK THEME VARIABLES --- */
+    :root {
+      --primary-color: #ec4899;
+      --primary-hover: #db2777;
+      --bg-color: #0b0711;
+      --card-bg: rgba(26, 18, 37, 0.75);
+      --card-border: #382142;
+      --text-color: #fcf7fa;
+      --text-muted: #a393a7;
+      --accent-color: #f472b6;
+      --gold-color: #fbbf24;
+      --silver-color: #cbd5e1;
+      --bronze-color: #d97706;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(236, 72, 153, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(244, 114, 182, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(11, 7, 17, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+      padding: 1.2rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f472b6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* --- LAYOUT CONTAINER --- */
+    section {
+      padding: 7rem 8% 5rem 8%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid rgba(56, 33, 66, 0.5);
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .sub-title {
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      background: rgba(236, 72, 153, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(236, 72, 153, 0.2);
+    }
+
+    .main-title {
+      font-size: 2.4rem;
+      margin-top: 0.6rem;
+      font-weight: 700;
+    }
+
+    /* --- SECTION 1: ABOUT / HOME --- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .bio-text {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .profile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    }
+
+    .profile-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+      color: var(--accent-color);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .data-item {
+      margin-bottom: 1rem;
+    }
+
+    .data-item label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .data-item span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    /* --- SECTION 2: EDUCATION & ORGANIZATIONS --- */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .edu-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 1.8rem;
+      border-radius: 14px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+    }
+
+    .edu-year {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      background: rgba(244, 114, 182, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .edu-school {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .edu-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* TAB ORGANISASI */
+    .org-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-color);
+      padding: 0.7rem 1.4rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      border-color: var(--primary-color);
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    }
+
+    .tab-content {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .org-role {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* --- SECTION 3: SKILLS --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2.2rem;
+      border-radius: 16px;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 1.5rem;
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin-bottom: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .skill-list li strong {
+      color: var(--text-color);
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    /* --- SECTION 4: ACHIEVEMENTS --- */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .achieve-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 1.8rem;
+      border-radius: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .achieve-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .achieve-card.gold { border-left: 4px solid var(--gold-color); }
+    .achieve-card.silver { border-left: 4px solid var(--silver-color); }
+    .achieve-card.bronze { border-left: 4px solid var(--bronze-color); }
+
+    .achieve-icon {
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gold .achieve-icon { color: var(--gold-color); }
+    .silver .achieve-icon { color: var(--silver-color); }
+    .bronze .achieve-icon { color: var(--bronze-color); }
+
+    .achieve-info h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .achieve-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* --- SECTION 5: CONTACT --- */
+    .contact-container {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2.2rem;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-color);
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      border-color: var(--primary-color);
+      box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4);
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--bg-color);
+      border-top: 1px solid var(--card-border);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 868px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <div class="logo">ALINA.</div>
+    <ul class="nav-links">
+      <li><a href="#about">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#achievements">ACHIEVEMENTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- BAGIAN 1: ABOUT & BIOGRAFI RINGKAS -->
+  <section id="about">
+    <div class="section-header">
+      <span class="sub-title">01 / TENTANG SAYA</span>
+      <h1 class="main-title">Latar Belakang & Perjalanan Akademik</h1>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="bio-text">
+          Halo! Saya <strong>Alina Decha Nabila Putri</strong>, mahasiswa program studi <strong>S1 Pendidikan Teknologi Informasi</strong> di <strong>Universitas Negeri Surabaya (UNESA)</strong> angkatan 2026. Saya memadukan ketertarikan mendalam pada ilmu informatika dan komputasi dengan hasrat besar di bidang pendidikan modern. Saya percaya bahwa integrasi teknologi digital dan strategi pedagogi yang tepat dapat menciptakan pengalaman belajar yang inovatif, efektif, dan transformatif.
+        </p>
+        <p class="bio-text">
+          Perjalanan akademik saya dibentuk oleh ketekunan berprestasi di bidang sains dan informatika, serta keaktifan berorganisasi sejak jenjang sekolah menengah. Melalui pengalaman kepemimpinan di <strong>Majelis Perwakilan Kelas (MPK)</strong> pada Divisi Keagamaan dan Divisi Evaluasi, serta peran aktif di <strong>Tim Jurnalistik</strong> sekolah, saya terbiasa melatih pemikiran kritis, kepemimpinan berintegritas, kepedulian sosial, dan kecakapan komunikasi publik. Kombinasi kemampuan komputasional dan dinamika kepemimpinan ini menjadi pijakan kuat bagi saya untuk berkontribusi aktif dalam pengembangan teknologi pendidikan di masa depan.
+        </p>
+      </div>
+      <div class="profile-card">
+        <h3><i class="fa-solid fa-id-card"></i> BIOGRAFI RINGKAS</h3>
+        <div class="data-item">
+          <label>Nama Lengkap</label>
+          <span>Alina Decha Nabila Putri</span>
+        </div>
+        <div class="data-item">
+          <label>NIM</label>
+          <span>26050974051</span>
+        </div>
+        <div class="data-item">
+          <label>Program Studi</label>
+          <span>Pendidikan Teknologi Informasi</span>
+        </div>
+        <div class="data-item">
+          <label>Fakultas</label>
+          <span>Fakultas Teknik</span>
+        </div>
+        <div class="data-item">
+          <label>Perguruan Tinggi</label>
+          <span>Universitas Negeri Surabaya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAGIAN 2: RIWAYAT PENDIDIKAN & AKTIVITAS KEORGANISASIAN -->
+  <section id="education">
+    <div class="section-header">
+      <span class="sub-title">1.1 | PENDIDIKAN FORMAL</span>
+      <h2 class="main-title">Riwayat Pendidikan</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <span class="edu-year">2026 – Sekarang</span>
+        <h3 class="edu-school">Universitas Negeri Surabaya</h3>
+        <p class="edu-desc">S1 Pendidikan Teknologi Informasi, Fakultas Teknik. Berfokus pada pemrograman komputer, sains data pendidikan, perancangan media interaktif, dan sistem informasi.</p>
+      </div>
+      <div class="edu-card">
+        <span class="edu-year">2023 – 2026</span>
+        <h3 class="edu-school">SMA Negeri Balung</h3>
+        <p class="edu-desc">Menyelesaikan pendidikan menengah atas dengan fokus berprestasi di olimpiade tingkat nasional, aktif di pengurusan MPK, serta tim jurnalistik sekolah.</p>
+      </div>
+      <div class="edu-card">
+        <span class="edu-year">2020 – 2023</span>
+        <h3 class="edu-school">MTs Baitul Arqom</h3>
+        <p class="edu-desc">Menempuh pendidikan tingkat menengah pertama dengan penguatan fondasi karakter religius, disiplin akademik, serta literasi sains.</p>
+      </div>
+      <div class="edu-card">
+        <span class="edu-year">2014 – 2020</span>
+        <h3 class="edu-school">SDN Balung Lor 3</h3>
+        <p class="edu-desc">Menyelesaikan pendidikan dasar dengan membangun minat belajar yang tinggi, keberanian berinteraksi sosial, dan kecintaan pada ilmu pengetahuan.</p>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top: 2rem;">
+      <span class="sub-title">1.2 | AKTIVITAS & KEORGANISASIAN</span>
+      <h2 class="main-title">Pengalaman Organisasi & Ekstrakurikuler</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Pilih organisasi di bawah ini untuk melihat rincian peran saya:</p>
+    </div>
+
+    <!-- TAB BUTTONS -->
+    <div class="org-tabs">
+      <button class="tab-btn active" onclick="openOrg(event, 'mpk-evaluasi')">MPK - Divisi Evaluasi (2025-2026)</button>
+      <button class="tab-btn" onclick="openOrg(event, 'mpk-agama')">MPK - Divisi Keagamaan (2024-2025)</button>
+      <button class="tab-btn" onclick="openOrg(event, 'jurnalistik')">Tim Jurnalistik Majalah</button>
+    </div>
+
+    <!-- TAB CONTENTS -->
+    <div id="mpk-evaluasi" class="tab-content active">
+      <div class="org-role"><i class="fa-solid fa-clipboard-check"></i> Pengurus MPK - Divisi Evaluasi (2025 – 2026)</div>
+      <p class="bio-text">Bertanggung jawab dalam menjalankan fungsi pengawasan dan evaluasi kritis terhadap kinerja pengurus OSIS serta keberlangsungan program kerja sekolah. Menyusun laporan evaluasi berkala, menganalisis ketercapaian target kegiatan, serta memberikan rekomendasi konstruktif demi efisiensi dan transparansi keorganisasian siswa.</p>
+    </div>
+
+    <div id="mpk-agama" class="tab-content">
+      <div class="org-role"><i class="fa-solid fa-hands-praying"></i> Pengurus MPK - Divisi Keagamaan (2024 – 2025)</div>
+      <p class="bio-text">Mengemban amanah dalam merancang dan mengawasi kegiatan pembinaan kerohanian siswa. Berperan aktif dalam koordinasi peringatan hari besar keagamaan, memperkuat nilai-nilai toleransi dan budi pekerti di lingkungan sekolah, serta menginisiasi aksi kepedulian sosial kesiswaan.</p>
+    </div>
+
+    <div id="jurnalistik" class="tab-content">
+      <div class="org-role"><i class="fa-solid fa-newspaper"></i> Anggota Tim Redaksi Jurnalistik</div>
+      <p class="bio-text">Berperan aktif dalam seluruh tahapan penerbitan majalah sekolah. Berkontribusi langsung mulai dari perancangan ide liputan, wawancara narasumber, penulisan artikel ilmiah-populer, penyuntingan bahasa, hingga kolaborasi dalam perancangan layout dan tata letak majalah hingga sukses terbit.</p>
+    </div>
+  </section>
+
+  <!-- BAGIAN 3: KEAHLIAN SAYA -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="sub-title">02 / KEAHLIAN SAYA</span>
+      <h2 class="main-title">Kemampuan Teknis & Interpersonal</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-laptop-code"></i> Hard Skills (Teknis & IT)</h3>
+        <ul class="skill-list">
+          <li>
+            <strong>Pemrograman & Informatika Dasar</strong>
+            Penguasaan logika algoritma, pemahaman konsep dasar pemrograman web (HTML, CSS, JavaScript) serta logika komputasi olimpiade.
+          </li>
+          <li>
+            <strong>Penerbitan & Desain Media Digital</strong>
+            Penyusunan tata letak (layout) majalah, desain grafis presentasi, dan materi publikasi visual menggunakan Canva dan tools editing.
+          </li>
+          <li>
+            <strong>Penulisan Jurnalistik & Redaksional</strong>
+            Penyusunan naskah wawancara, pembuatan artikel edukatif/berita, serta pengeditan tata bahasa untuk penerbitan majalah.
+          </li>
+          <li>
+            <strong>Analisis Evaluasi & Administrasi Digital</strong>
+            Penyusunan laporan evaluasi terstruktur, pengolahan data dokumen menggunakan Microsoft Office & Google Workspace.
+          </li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-brain"></i> Soft Skills (Interpersonal)</h3>
+        <ul class="skill-list">
+          <li>
+            <strong>Berpikir Analitis & Kritis</strong>
+            Teruji melalui kompetisi olimpiade sains dan peran dalam mengevaluasi efektivitas program kerja keorganisasian.
+          </li>
+          <li>
+            <strong>Kepemimpinan & Evaluasi Organisasi</strong>
+            Memiliki objektivitas, integritas tinggi, dan ketegasan dalam memberikan masukan serta memimpin kegiatan kesiswaan.
+          </li>
+          <li>
+            <strong>Komunikasi & Kerjasama Tim</strong>
+            Mampu berkolaborasi secara dinamis dengan tim redaksi jurnalistik dan pengurus keorganisasian dalam lingkungan multikultural.
+          </li>
+          <li>
+            <strong>Manajemen Waktu & Tekanan Kerja</strong>
+            Terbiasa membagi waktu secara seimbang antara persiapan kompetisi olimpiade tingkat nasional, tugas akademik, dan tanggung jawab organisasi.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAGIAN 4: PRESTASI SAYA -->
+  <section id="achievements">
+    <div class="section-header">
+      <span class="sub-title">03 / PRESTASI SAYA</span>
+      <h2 class="main-title">Penghargaan & Pencapaian</h2>
+    </div>
+    <div class="achievement-grid">
+      <div class="achieve-card gold">
+        <div class="achieve-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="achieve-info">
+          <h4>Medali Emas Olimpiade Informatika</h4>
+          <p>Juara Peraih Medali Emas Olimpiade Mata Pelajaran Informatika pada Kompetisi Sains Indonesia - Hardiknas Publication (KSI-HP 2026).</p>
+        </div>
+      </div>
+      <div class="achieve-card silver">
+        <div class="achieve-icon"><i class="fa-solid fa-medal"></i></div>
+        <div class="achieve-info">
+          <h4>Medali Perak Olimpiade Biologi</h4>
+          <p>Juara Peraih Medali Perak Olimpiade Mata Pelajaran Biologi tingkat nasional pada Olimpiade Nasional (OLIMNAS 2026).</p>
+        </div>
+      </div>
+      <div class="achieve-card bronze">
+        <div class="achieve-icon"><i class="fa-solid fa-medal"></i></div>
+        <div class="achieve-info">
+          <h4>Medali Perunggu Olimpiade Informatika</h4>
+          <p>Juara Peraih Medali Perunggu Olimpiade Mata Pelajaran Informatika pada ajang Olimpiade Nasional (OLIMNAS 2026).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAGIAN 5: CONTACT -->
+  <section id="contact">
+    <div class="contact-container">
+      <div class="section-header">
+        <span class="sub-title">04 / KONTAK</span>
+        <h2 class="main-title">Hubungi Saya</h2>
+      </div>
+      <p class="bio-text">Saya selalu terbuka untuk berdiskusi, bertukar ide, serta menjalin kolaborasi di bidang Pendidikan Teknologi Informasi, riset komputasi, pengembangan media digital, maupun kegiatan akademik dan keorganisasian. Mari terhubung!</p>
+      <div class="contact-links">
+        <a href="mailto:alinadecha29@gmail.com" class="contact-btn" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/alina-decha-nabila-putri-4470b4441?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="contact-btn" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/alinadecha29-glitch" class="contact-btn" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://www.instagram.com/llynnn.dcha?obrf=bjBocDQ2cHRodDYz" class="contact-btn" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Alina Decha Nabila Putri. All rights reserved. | Pendidikan Teknologi Informasi UNESA</p>
+  </footer>
+
+  <!-- JAVASCRIPT UNTUK TAB ORGANISASI -->
+  <script>
+    function openOrg(evt, orgName) {
+      var i, tabcontent, tablinks;
+      
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+
+      tablinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+
+      document.getElementById(orgName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>
